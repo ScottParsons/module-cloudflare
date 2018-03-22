@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * @package    SussexDev_Cloudflare
+ * @copyright  Copyright (c) 2018 Scott Parsons
+ * @license    https://github.com/ScottParsons/module-cloudflare/blob/master/LICENSE.md
+ * @version    1.0.0
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="dev" translate="label">
+            <group id="purge_cloudflare_cache" translate="label" type="text" sortOrder="500" showInDefault="1" showInWebsite="0" showInStore="1">
+                <label>Enable Cloudflare Cache Purging</label>
+                <field id="enable" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Enable</label>
+                    <comment><![CDATA[Configure the fields below to purge the Cloudflare cache when
+                        clicking the 'Flush Cache Storage' button in System -> Cache Management]]></comment>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="email_address" translate="label comment" type="text" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Email Address</label>
+                    <comment><![CDATA[The email address associated with your Cloudflare account.]]></comment>
+                    <validate>validate-email</validate>
+                </field>
+                <field id="api_key" translate="label comment" type="obscure" sortOrder="30" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>API Key</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                    <comment><![CDATA[Your Global API Key can be found in your Cloudflare account within the 'Overview' tab when managing your domain.]]></comment>
+                </field>
+                <field id="site_zone_code" translate="label comment" type="text" sortOrder="40" showInDefault="1" showInWebsite="0" showInStore="0">
+                    <label>Site Zone Code</label>
+                    <comment><![CDATA[You can find this in your Cloudflare account within the 'Overview' tab when managing your domain.]]></comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,15 @@
+{
+  "name": "sussexdev/module-cloudflare",
+  "description": "A Magento 2 module that purges the website's Cloudflare cache when flushing the cache storage in the Magento admin.",
+  "version": "1.0.0",
+  "license": "MIT",
+  "type": "magento2-module",
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "SussexDev\\Cloudflare\\": ""
+    }
+  }
+}
